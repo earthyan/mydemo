@@ -1,12 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2017/8/11
- * Time: 16:02
- */
-
-
 /*
  * 把value 值作为key
  * */
@@ -16,5 +8,15 @@ $arr = ['借款金额'=>'order_amount','使用提额券'=>'promote_money','使�
     '手机号码'=>'phone','申请时间'=>'created_time','订单号'=>'apply_id','放款银行'=>'bank_name',
     '放款银行卡号'=>'bank_card',
 ];
+
 $keys = array_keys(array_flip($arr));
-var_dump($keys);die;
+$count  = count($arr);
+$fix_arr= new SplFixedArray($count);
+$arr1 = array_combine($keys,$fix_arr->toArray());
+var_dump($arr1);
+
+$res = [];
+foreach ($arr as $key => $val){
+    $res[$val] = '';
+}
+var_dump($res);die;

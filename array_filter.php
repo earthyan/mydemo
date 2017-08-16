@@ -25,4 +25,3 @@ $arr = array_filter($arr,function($val)use($delElements){
     }
 });
 echo '<pre>';
-var_dump($arr);
